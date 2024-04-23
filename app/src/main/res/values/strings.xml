@@ -1,0 +1,46 @@
+<resources>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">AdventureWorld</string>
+    <string name="header_audiobook">Hörbücher</string>
+    <string name="tv_searchbar">Suche hier Hörbücher...</string>
+    <string name="header_ebook">Bücher</string>
+    <string name="tv_serachbar_ebook">Suche hier Bücher...</string>
+    <string name="header_fav">Favoriten</string>
+    <string name="header_login">Login</string>
+    <string name="tv_email">E-Mail</string>
+    <string name="tv_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_anmelden">Anmelden</string>
+    <string name="tv_quiz">Quiz Abenteuer</string>
+    <string name="tv_quiz_start">Lass uns gemeinsam das Quiz starten</string>
+    <string name="tv_alle_themen">Alle Themen</string>
+    <string name="btn_next">Weiter</string>
+    <string name="header_settings">Einstellungen</string>
+    <string name="tv_angemeldet">Angemeldet:</string>
+    <string name="btn_abmelden">Abmelden</string>
+    <string name="btn_delete">Konto Löschen</string>
+    <string name="app_titel">Abenteuer beginnen hier!</string>
+    <string name="tv_anmelden">Anmelden</string>
+    <string name="btn_abbrechen">Abbrechen</string>
+    <string name="btn_end">Ende</string>
+    <string name="tv_teilnehmer">Marco Grimme Syntax Institut (Batch 13)</string>
+    <string name="chatBot">Hey Ihr Endecker :) Stellt mir eure Fragen!</string>
+    <string name="editChat">Schreibe hier deine Frage....</string>
+    <string name="btnBot">Los</string>
+    <string name="headerLexikon">Lexikon</string>
+    <string name="read">Lesen</string>
+    <string name="dr_ck_auf_das_buch">Drück auf das Buch</string>
+    <string name="info">INFO</string>
+    <string name="dev_info">Willkommen in der Adventure World!\n\nEntdecke eine Welt voller Abenteuer und Möglichkeiten, entwickelt von Marco Grimme. Adventure World bietet eine Vielzahl von Funktionen, die dein Erlebnis bereichern:\n\n- Nutze Lexi, unser intelligentes Lexikon mit KI, um Begriffe nachzuschlagen und mehr zu lernen.\n- Höre fesselnde Hörbücher, tauche ein in fantastische Geschichten und lasse dich von deiner Fantasie tragen.\n- Lese Bücher aus verschiedenen Genres und erweitere deinen Horizont.\n- Fordere dein Wissen heraus und löse Quizfragen zu verschiedenen Themen.\n- Markiere deine Lieblingshörbücher als Favoriten, um sie später wiederzufinden.\n\nAdventure World bietet dir eine Plattform, um deine Freizeit sinnvoll zu gestalten und neue Welten zu erkunden.\n\nKontaktieren Sie mich gerne über GitHub und LinkedIn, um Feedback zu geben, Fragen zu stellen oder einfach nur Hallo zu sagen. Ich bin offen für eine Zusammenarbeit und neue Ideen!\n\nLade jetzt Adventure World herunter und tauche ein in ein Abenteuer, das du nicht vergessen wirst.</string>
+    <string name="zum_entwickler">Zum Entwickler</string>
+
+</resources>

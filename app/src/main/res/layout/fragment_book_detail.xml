@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ebook.BookDetailFragment">
+
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/header_ebook"
+        android:textStyle="bold"
+        android:letterSpacing="0.3"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/green"
+        android:textSize="40sp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="96dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="40dp"
+        android:layout_below="@id/header_title"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/img_Cover_Detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bspbild" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_Title_Ebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardView"
+        android:layout_centerHorizontal="true"
+        tools:text="Titel"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"/>
+
+
+    <Button
+        android:id="@+id/btnRead"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/read"
+        android:backgroundTint="@color/blue"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/tv_Title_Ebook"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/lexiGif"
+        android:layout_width="116dp"
+        android:layout_height="124dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        tools:src="@drawable/lexigif" />
+
+</RelativeLayout>

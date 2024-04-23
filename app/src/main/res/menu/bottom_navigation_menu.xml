@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/audioBookFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Hör-Bücher"
+        android:icon="@drawable/baseline_home_24"
+        />
+    <item
+        android:id="@+id/bookFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="E-Book"
+        android:icon="@drawable/baseline_menu_book_24" />
+    <item
+        android:id="@+id/quizFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Quiz"
+        android:icon="@drawable/baseline_quiz_24" />
+
+    <item
+        android:id="@+id/favoritenFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Favoriten"
+        android:icon="@drawable/baseline_favorite_24" />
+
+    <item
+        android:id="@+id/settingFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Einstellung"
+        android:icon="@drawable/baseline_settings_24" />
+
+</menu>

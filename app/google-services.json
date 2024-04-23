@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "198818621654",
+    "project_id": "adventureworld-bd654",
+    "storage_bucket": "adventureworld-bd654.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198818621654:android:8ecc875c651449ff4b0177",
+        "android_client_info": {
+          "package_name": "de.syntax.androidabschluss"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAalfgj1GBuRNkaon-F7I1GRlr0FY26imQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

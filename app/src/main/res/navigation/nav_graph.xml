@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/audioBookFragment">
+
+    <fragment
+        android:id="@+id/audioBookFragment"
+        android:name="de.syntax.androidabschluss.ui.audiobook.AudioBookFragment"
+        android:label="AudioBookFragment"
+        tools:layout="@layout/fragment_audio_book">
+        <action
+            android:id="@+id/action_audioBookFragment_to_audioBookDetailFragment"
+            app:destination="@id/audioBookDetailFragment" />
+        <action
+            android:id="@+id/action_audioBookFragment_to_loginActivity2"
+            app:destination="@id/loginActivity2" />
+        <action
+            android:id="@+id/action_audioBookFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookFragment"
+        android:name="de.syntax.androidabschluss.ui.ebook.BookFragment"
+        android:label="fragment_book"
+        tools:layout="@layout/fragment_book" >
+        <action
+            android:id="@+id/action_bookFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+        <action
+            android:id="@+id/action_bookFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="de.syntax.androidabschluss.ui.quiz.QuizFragment"
+        android:label="QuizFragment"
+        tools:layout="@layout/fragment_quiz">
+        <action
+            android:id="@+id/action_quizFragment_to_quizDetailFragment"
+            app:destination="@id/quizDetailFragment" />
+        <action
+            android:id="@+id/action_quizFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritenFragment"
+        android:name="de.syntax.androidabschluss.ui.FavoriteFragment"
+        android:label="fragment_favorit"
+        tools:layout="@layout/fragment_favorit" >
+        <action
+            android:id="@+id/action_favoritenFragment_to_audioBookDetailFragment"
+            app:destination="@id/audioBookDetailFragment" />
+        <action
+            android:id="@+id/action_favoritenFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/audioBookDetailFragment"
+        android:name="de.syntax.androidabschluss.ui.audiobook.AudioBookDetailFragment"
+        android:label="fragment_book_detail"
+        tools:layout="@layout/fragment_audio_book_detail" >
+        <argument
+            android:name="artistName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_audioBookDetailFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookDetailFragment"
+        android:name="de.syntax.androidabschluss.ui.ebook.BookDetailFragment"
+        android:label="BookDetailFragment"
+        tools:layout="@layout/fragment_book_detail">
+
+
+        <argument
+            android:name="artistName"
+            app:argType="string" />
+        <argument
+            android:name="artworkUrl100"
+            app:argType="string" />
+
+        <argument
+            android:name="previewUrl"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_bookDetailFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+
+
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity2"
+        android:name="de.syntax.androidabschluss.LoginActivity2"
+        android:label="activity_login2"
+        tools:layout="@layout/activity_login2" />
+    <fragment
+        android:id="@+id/quizDetailFragment"
+        android:name="de.syntax.androidabschluss.ui.quiz.QuizDetailFragment"
+        android:label="fragment_quiz_detail"
+        tools:layout="@layout/fragment_quiz_detail" >
+
+        <action
+            android:id="@+id/action_quizDetailFragment_to_audioBookFragment"
+            app:destination="@id/audioBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="de.syntax.androidabschluss.ui.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_loginActivity2"
+            app:destination="@id/loginActivity2" />
+        <action
+            android:id="@+id/action_settingFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_infoFragment"
+            app:destination="@id/infoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chatBotFragment"
+        android:name="de.syntax.androidabschluss.ui.chatbot.ChatBotFragment"
+        android:label="fragment_chat_bot"
+        tools:layout="@layout/fragment_chat_bot" >
+
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="de.syntax.androidabschluss.ui.InfoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_infoFragment_to_chatBotFragment"
+            app:destination="@id/chatBotFragment" />
+    </fragment>
+
+</navigation>
