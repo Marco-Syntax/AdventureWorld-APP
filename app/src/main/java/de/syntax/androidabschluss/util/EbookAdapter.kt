@@ -23,6 +23,7 @@ class EbookAdapter(
         RecyclerView.ViewHolder(binding.root)
 
     // Erstellen eines ViewHolders
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         // Aufblasen des Layouts für jedes Listenelement
         val binding = ItemBookBinding.inflate(LayoutInflater.from(parent.context), parent, false)
