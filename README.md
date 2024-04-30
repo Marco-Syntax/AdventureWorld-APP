@@ -6,8 +6,7 @@
 <img src="https://github.com/Marco-Syntax/AdventureWorld-APP/assets/148045668/ebdbce2b-f026-401d-bab5-44628de2f8d7" alt="anmelden" width="200">
 
 Link zur App
-<img src="https://github.com/Marco-Syntax/AdventureWorld-APP/assets/148045668/cb23ddfe-a8bf-4a03-975b-87878ca0d44d" alt="anmelden" width="200">
-
+<img src="https://github.com/Marco-Syntax/AdventureWorld-APP/assets/148045668/103995ef-74e3-4e64-b61f-e80603b23f56" alt="anmelden" width="200">
 
 
 
