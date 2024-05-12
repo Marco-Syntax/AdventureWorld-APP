@@ -45,4 +45,4 @@ Kinder können mit der App auf unterhaltsame Weise neue Dinge entdecken und ihr 
 Adventure World gibt Kindern die Möglichkeit, in einer sicheren Umgebung zu spielen, zu lernen und ihre Kreativität zu entfalten. Alles an einem Ort! Durch aufregende Abenteuer und unterstützende Technologie wird jedes Kind zum Entdecker und Abenteurer.
 ## Kontakt & Berufliche Möglichkeiten
 
-Folgen Sie mir auf [LinkedIn](https://www.linkedin.com/in/marcogrimme/) für weitere Updates und um mit mir in Verbindung zu treten. Ich bin offen für neue berufliche Herausforderungen und interessiert an aufregenden Projekten. Kontaktieren Sie mich gerne über LinkedIn, um potenzielle Kooperationsmöglichkeiten zu besprechen.
+Folgen Sie mir auf [LinkedIn](https://www.linkedin.com/in/marco-grimme) für weitere Updates und um mit mir in Verbindung zu treten. Ich bin offen für neue berufliche Herausforderungen und interessiert an aufregenden Projekten. Kontaktieren Sie mich gerne über LinkedIn, um potenzielle Kooperationsmöglichkeiten zu besprechen.
