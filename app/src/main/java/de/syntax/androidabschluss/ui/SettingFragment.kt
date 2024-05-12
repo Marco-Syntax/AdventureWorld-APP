@@ -85,7 +85,7 @@ class SettingFragment : Fragment() {
 
     private fun translate() {
 
-        val animator = ObjectAnimator.ofFloat(binding.info, View.TRANSLATION_Y, -30f)
+        val animator = ObjectAnimator.ofFloat(binding.info, View.TRANSLATION_Y, -20f)
         animator.duration = 1000
         animator.repeatCount = 1
         animator.repeatMode = ObjectAnimator.REVERSE
