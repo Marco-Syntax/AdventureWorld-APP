@@ -3,7 +3,7 @@
 
 <img src="https://github.com/Marco-Syntax/AdventureWorld-APP/assets/148045668/65412c58-cc15-4a0f-8c03-657c0adedcb8" alt="anmelden" width="200">
 QR-Code App
-<img src="https://github.com/Marco-Syntax/AdventureWorld-APP/assets/148045668/103995ef-74e3-4e64-b61f-e80603b23f56" alt="anmelden" width="200">
+<img src="https://github.com/Marco-Syntax/AdventureWorld-APP/assets/148045668/b675b93c-5a17-443d-9bef-8beaff30c1a9" alt="anmelden" width="200">
 
 
 
