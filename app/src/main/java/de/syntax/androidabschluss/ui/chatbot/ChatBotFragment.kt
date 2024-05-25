@@ -17,7 +17,6 @@ import de.syntax.androidabschluss.viewModels.ChatViewModel
 
 class ChatBotFragment : Fragment() {
 
-    // Datenbindung für das Fragment
     private lateinit var binding: FragmentChatBotBinding
 
     // ViewModel für dieses Fragment, durch Lazy-Initialization initialisiert
@@ -30,7 +29,6 @@ class ChatBotFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Datenbindung initialisieren und das Layout aufblasen
         binding = FragmentChatBotBinding.inflate(inflater, container, false)
         return binding.root
     }

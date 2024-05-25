@@ -1,11 +1,8 @@
 package de.syntax.androidabschluss.ui.audiobook
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.speech.RecognizerIntent
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
@@ -13,7 +10,6 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import androidx.activity.addCallback
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
@@ -24,7 +20,6 @@ import de.syntax.androidabschluss.databinding.FragmentAudioBookBinding
 import de.syntax.androidabschluss.util.AudioBookAdapter
 import de.syntax.androidabschluss.viewModels.ApiStatus
 import de.syntax.androidabschluss.viewModels.SharedViewModel
-import java.util.Locale
 
 class AudioBookFragment : Fragment() {
     private val viewModel: SharedViewModel by activityViewModels()
@@ -64,7 +59,7 @@ class AudioBookFragment : Fragment() {
 
         // Spracheingabe starten, wenn die Mikrofon-Schaltfläche geklickt wird
         binding.btnMic.setOnClickListener {
-            startSpeechToText()
+//            startSpeechToText()
         }
 
         // Beobachten des Ladezustands und Anzeigen des Fortschrittsbalkens bzw. Fehlerbilds
@@ -112,32 +107,32 @@ class AudioBookFragment : Fragment() {
     }
 
     // Funktion zum Starten der Spracheingabe
-    private fun startSpeechToText() {
-        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
-        intent.putExtra(
-            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
-        )
-        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
-        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Spracheingabe starten...")
-        speechToTextLauncher.launch(intent)
-    }
+//    private fun startSpeechToText() {
+//        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+//        intent.putExtra(
+//            RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+//            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM
+//        )
+//        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+//        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Spracheingabe starten...")
+//        speechToTextLauncher.launch(intent)
+//    }
 
     // ActivityResultLauncher für die Spracheingabe
-    private val speechToTextLauncher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-            if (result.resultCode == Activity.RESULT_OK) {
-                val data: Intent? = result.data
-                val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-                val spokenText = result?.get(0)
-                binding.titelSucheAudioBook.setText(spokenText)
-                if (!spokenText.isNullOrEmpty() && spokenText.length >= 3) {
-                    viewModel.searchAudioBook(spokenText)
-                } else {
-                    viewModel.loadAllAudioEbook()
-                }
-            }
-        }
+//    private val speechToTextLauncher =
+//        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+//            if (result.resultCode == Activity.RESULT_OK) {
+//                val data: Intent? = result.data
+//                val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+//                val spokenText = result?.get(0)
+//                binding.titelSucheAudioBook.setText(spokenText)
+//                if (!spokenText.isNullOrEmpty() && spokenText.length >= 3) {
+//                    viewModel.searchAudioBook(spokenText)
+//                } else {
+//                    viewModel.loadAllAudioEbook()
+//                }
+//            }
+//        }
 
     // Dialog anzeigen, wenn keine Audiobücher gefunden wurden
     private fun noFoundDialog() {
