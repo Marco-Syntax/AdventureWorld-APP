@@ -31,10 +31,9 @@ class FavoriteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Bild für den Chatbot laden
-        val image = binding.chatBot
         Glide.with(this)
             .load(R.drawable.lexigif)
-            .into(image)
+            .into(binding.chatBot)
 
         // Klick-Listener für den Chatbot-Button
         binding.chatBot.setOnClickListener {
@@ -44,12 +43,14 @@ class FavoriteFragment : Fragment() {
         // Beobachtet die Favoritenliste im ViewModel und aktualisiert die RecyclerView, wenn sich die Daten ändern
         viewModel.favorite.observe(viewLifecycleOwner) { fav ->
             if (fav.isEmpty()) {
-                // Wenn keine Favoriten vorhanden sind, zeige den Platzhalter-Text an und verstecke die RecyclerView
+                // Wenn keine Favoriten vorhanden sind, zeige den Platzhalter-Text und das animierte Lexi-Icon an
                 binding.tvPlaceholder.visibility = View.VISIBLE
+                binding.ivLexiPlaceholder.visibility = View.VISIBLE
                 binding.rvFavoriten.visibility = View.GONE
             } else {
-                // Wenn Favoriten vorhanden sind, zeige die RecyclerView an und verstecke den Platzhalter-Text
+                // Wenn Favoriten vorhanden sind, zeige die RecyclerView an und verstecke die Platzhalter-Elemente
                 binding.tvPlaceholder.visibility = View.GONE
+                binding.ivLexiPlaceholder.visibility = View.GONE
                 binding.rvFavoriten.visibility = View.VISIBLE
                 binding.rvFavoriten.adapter = FavoriteAdapter(
                     fav.reversed(),
