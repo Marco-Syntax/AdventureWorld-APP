@@ -10,7 +10,7 @@ import retrofit2.http.POST
 
 
 const val apiKey: String = BuildConfig.API_KEY
-
+//const val apiKey: String = ""
 // Retrofit Service Interface für die OpenAI API
 interface OpenAiApiService {
     // Methode zur Erstellung einer Chat-Vervollständigungsanfrage

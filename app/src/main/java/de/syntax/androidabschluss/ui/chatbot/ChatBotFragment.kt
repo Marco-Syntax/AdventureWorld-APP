@@ -2,6 +2,7 @@ package de.syntax.androidabschluss.ui.chatbot
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,10 +61,13 @@ class ChatBotFragment : Fragment() {
             // Nachrichtentext aus dem Eingabefeld holen und trimmen
             val messageText = binding.messageInput.text.toString().trim()
             if (messageText.isNotEmpty()) {
+                // Debug: Logge die gesendete Nachricht
+                Log.d("ChatBotFragment", "Nachricht gesendet: $messageText")
+
                 // Neue Nachricht erstellen
                 val message = Message(content = messageText, role = "user")
                 // Chat-Nachricht an das ViewModel senden
-                viewModel.createChatCompletion(listOf(message), "gpt-3.5-turbo-0613")
+                viewModel.createChatCompletion(listOf(message), "gpt-3.5-turbo")
                 // Eingabefeld leeren
                 binding.messageInput.text = null
                 // GIF und Info-Bild ausblenden und aus der Ansicht entfernen
@@ -72,6 +76,8 @@ class ChatBotFragment : Fragment() {
                 infoImage.visibility = View.GONE
                 (infoImage.parent as? ViewGroup)?.removeView(infoImage)
             } else {
+                // Debug: Logge den Fall einer leeren Nachricht
+                Log.w("ChatBotFragment", "Leere Nachricht eingegeben")
                 // Benachrichtigung anzeigen, wenn keine Nachricht eingegeben wurde
                 showToast("Bitte eine Frage eingeben")
             }
@@ -86,19 +92,18 @@ class ChatBotFragment : Fragment() {
         // Beobachtet die Antwort des ViewModels und aktualisiert die Ansicht entsprechend
         viewModel.chatResponse.observe(viewLifecycleOwner) { response ->
             response?.let {
+                // Debug: Logge die erhaltene Antwort
+                Log.d("ChatBotFragment", "Erhaltene Antwort: $it")
                 // Antworttext anzeigen
                 binding.responseText.text = it
-                // GIF und Info-Bild wieder einblenden und zur Ansicht hinzufügen
-                gifImage.visibility = View.VISIBLE
-                (gifImage.parent as? ViewGroup)?.addView(gifImage)
-                infoImage.visibility = View.VISIBLE
-                (infoImage.parent as? ViewGroup)?.addView(infoImage)
-            }
+            } ?: Log.w("ChatBotFragment", "Keine Antwort erhalten")
         }
 
         // Beobachtet Fehlermeldungen des ViewModels und zeigt sie an, wenn sie auftreten
         viewModel.errorMessage.observe(viewLifecycleOwner) { error ->
             error?.let {
+                // Debug: Logge die Fehlermeldung
+                Log.e("ChatBotFragment", "Fehlermeldung erhalten: $it")
                 showToast("Fehler aufgetreten")
             }
         }
@@ -107,5 +112,4 @@ class ChatBotFragment : Fragment() {
     private fun showToast(message: String) {
         Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
-
 }

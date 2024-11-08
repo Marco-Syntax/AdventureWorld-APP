@@ -1,6 +1,7 @@
 package de.syntax.androidabschluss.viewModels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -30,6 +31,9 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
     // Methode zur Erstellung einer Chat-Antwort
     fun createChatCompletion(messages: List<Message>, model: String) {
+        // Debug: Logge den Start des Chat-Anfragenprozesses
+        Log.d("ChatViewModel", "Chat-Anfrage gestartet mit Nachrichten: $messages und Modell: $model")
+
         // Setzen des Ladezustands auf true, um anzuzeigen, dass die Anfrage läuft
         _isLoading.value = true
 
@@ -43,12 +47,16 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
             // Setzen der erhaltenen Chat-Antwort in das LiveData-Objekt
             _chatResponse.value = response?.choices?.firstOrNull()?.message?.content
+            // Debug: Logge die verarbeitete Antwort
+            Log.d("ChatViewModel", "Erhaltene Chat-Antwort: ${_chatResponse.value}")
         }, { error ->
             // Setzen des Ladezustands auf false im Fehlerfall
             _isLoading.value = false
 
             // Setzen der Fehlermeldung in das LiveData-Objekt
             _errorMessage.value = error
+            // Debug: Logge die Fehlermeldung
+            Log.e("ChatViewModel", "Fehler bei der Chat-Anfrage: $error")
         })
     }
 }
