@@ -16,7 +16,6 @@ import de.syntax.androidabschluss.viewModels.SharedViewModel
 class FavoriteFragment : Fragment() {
 
     private val viewModel: SharedViewModel by activityViewModels()
-
     private lateinit var binding: FragmentFavoritBinding
 
     override fun onCreateView(
@@ -27,7 +26,6 @@ class FavoriteFragment : Fragment() {
         binding = FragmentFavoritBinding.inflate(inflater, container, false)
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -45,11 +43,20 @@ class FavoriteFragment : Fragment() {
 
         // Beobachtet die Favoritenliste im ViewModel und aktualisiert die RecyclerView, wenn sich die Daten ändern
         viewModel.favorite.observe(viewLifecycleOwner) { fav ->
-            binding.rvFavoriten.adapter = FavoriteAdapter(
-                fav.reversed(),
-                viewModel,
-                requireContext()
-            ) // Setzt den Adapter für die RecyclerView
+            if (fav.isEmpty()) {
+                // Wenn keine Favoriten vorhanden sind, zeige den Platzhalter-Text an und verstecke die RecyclerView
+                binding.tvPlaceholder.visibility = View.VISIBLE
+                binding.rvFavoriten.visibility = View.GONE
+            } else {
+                // Wenn Favoriten vorhanden sind, zeige die RecyclerView an und verstecke den Platzhalter-Text
+                binding.tvPlaceholder.visibility = View.GONE
+                binding.rvFavoriten.visibility = View.VISIBLE
+                binding.rvFavoriten.adapter = FavoriteAdapter(
+                    fav.reversed(),
+                    viewModel,
+                    requireContext()
+                )
+            }
             viewModel.getAllFavorite()
         }
     }

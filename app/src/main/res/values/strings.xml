@@ -42,5 +42,6 @@
     <string name="info">INFO</string>
     <string name="dev_info">Willkommen in der Adventure World!\n\nEntdecke eine Welt voller Abenteuer und Möglichkeiten, entwickelt von Marco Grimme. Adventure World bietet eine Vielzahl von Funktionen, die dein Erlebnis bereichern:\n\n- Nutze Lexi, unser intelligentes Lexikon mit KI, um Begriffe nachzuschlagen und mehr zu lernen.\n- Höre fesselnde Hörbücher, tauche ein in fantastische Geschichten und lasse dich von deiner Fantasie tragen.\n- Lese Bücher aus verschiedenen Genres und erweitere deinen Horizont.\n- Fordere dein Wissen heraus und löse Quizfragen zu verschiedenen Themen.\n- Markiere deine Lieblingshörbücher als Favoriten, um sie später wiederzufinden.\n\nAdventure World bietet dir eine Plattform, um deine Freizeit sinnvoll zu gestalten und neue Welten zu erkunden.\n\nKontaktieren Sie mich gerne über GitHub und LinkedIn, um Feedback zu geben, Fragen zu stellen oder einfach nur Hallo zu sagen. Ich bin offen für eine Zusammenarbeit und neue Ideen!\n\nLade jetzt Adventure World herunter und tauche ein in ein Abenteuer, das du nicht vergessen wirst.</string>
     <string name="zum_entwickler">Zum Entwickler</string>
+    <string name="no_favorites">Keine Favoriten vorhanden</string>
 
 </resources>
