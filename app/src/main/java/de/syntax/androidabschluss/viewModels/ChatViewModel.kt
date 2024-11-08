@@ -11,51 +11,53 @@ import de.syntax.androidabschluss.data.models.Message
 
 class ChatViewModel(application: Application) : AndroidViewModel(application) {
 
-    // Erstellen einer Instanz des ChatRepository
     private val chatRepository = ChatRepository()
 
-    // LiveData für die Chat-Antwort
     private val _chatResponse = MutableLiveData<String?>()
     val chatResponse: LiveData<String?>
         get() = _chatResponse
 
-    // LiveData für Fehlermeldungen
     private val _errorMessage = MutableLiveData<String?>()
     val errorMessage: LiveData<String?>
         get() = _errorMessage
 
-    // LiveData, um den Ladezustand anzuzeigen
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean>
         get() = _isLoading
 
-    // Methode zur Erstellung einer Chat-Antwort
+    // Erweiterte Liste von Beleidigungen und unangemessenen Ausdrücken
+    private val prohibitedWords = listOf(
+        "Beleidigung1", "Beleidigung2", "Hassausdruck1", "unangemessenes Wort",
+        "Gewalt", "Mord", "Vergewaltigung", "Drogen", "Sex", "Nackt", "Bikini"
+        // Weitere Wörter hinzufügen
+    )
+
+    // Methode zur Überprüfung und Filterung der Antwort mit Mustererkennung
+    private fun filterResponse(response: String?): String {
+        response?.let {
+            for (word in prohibitedWords) {
+                val regex = Regex("\\b$word\\b", RegexOption.IGNORE_CASE)
+                if (regex.containsMatchIn(it)) {
+                    Log.w("ChatViewModel", "Gefundene unangemessene Antwort: $it")
+                    return "Diese Antwort wurde gefiltert, um unangemessene Inhalte zu vermeiden."
+                }
+            }
+        }
+        return response ?: "Keine Antwort erhalten."
+    }
+
     fun createChatCompletion(messages: List<Message>, model: String) {
-        // Debug: Logge den Start des Chat-Anfragenprozesses
-        Log.d("ChatViewModel", "Chat-Anfrage gestartet mit Nachrichten: $messages und Modell: $model")
-
-        // Setzen des Ladezustands auf true, um anzuzeigen, dass die Anfrage läuft
         _isLoading.value = true
-
-        // Erstellen eines ChatRequest-Objekts mit den übergebenen Nachrichten und dem Modell
         val request = ChatRequest(messages, model)
 
-        // Aufruf der Methode im Chat-Repository, um die Chat-Antwort zu erhalten
         chatRepository.createChatCompletion(request, { response ->
-            // Setzen des Ladezustands auf false nach dem Erhalt der Antwort
             _isLoading.value = false
-
-            // Setzen der erhaltenen Chat-Antwort in das LiveData-Objekt
-            _chatResponse.value = response?.choices?.firstOrNull()?.message?.content
-            // Debug: Logge die verarbeitete Antwort
-            Log.d("ChatViewModel", "Erhaltene Chat-Antwort: ${_chatResponse.value}")
+            val filteredResponse = filterResponse(response?.choices?.firstOrNull()?.message?.content)
+            _chatResponse.value = filteredResponse
+            Log.d("ChatViewModel", "Gefilterte Antwort: $filteredResponse")
         }, { error ->
-            // Setzen des Ladezustands auf false im Fehlerfall
             _isLoading.value = false
-
-            // Setzen der Fehlermeldung in das LiveData-Objekt
             _errorMessage.value = error
-            // Debug: Logge die Fehlermeldung
             Log.e("ChatViewModel", "Fehler bei der Chat-Anfrage: $error")
         })
     }
